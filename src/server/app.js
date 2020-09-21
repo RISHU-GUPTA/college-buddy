@@ -16,6 +16,8 @@ app.use(passport.initialize());  //this uses googleSetup
 app.use(passport.session()); //this uses cookie session
 app.use('/',require('./routes/user'));
 app.use('/',require('./routes/paper'));
+app.use('/',require('./routes/timetable'));
+app.use('/',require('./routes/news'));
 app.listen(process.env.PORT||5555,()=>{
     console.log("server started....");
 })

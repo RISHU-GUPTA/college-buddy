@@ -53,7 +53,7 @@ route.post('/uploadpaper',(req,res)=>{
 // route.get('/uploaded',(req,res)=>{
 //     res.send("Paper uploaded");
 // })
-route.post('/display',(req,res)=>{
+route.get('/display',(req,res)=>{
     paperOperation.displayPaper(res);
 })
 

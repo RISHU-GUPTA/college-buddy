@@ -7,7 +7,7 @@ route.post('/add',(req,res)=>{
 })
 
 route.post('/search',(req,res)=>{
-    timetableOperation.search(res);
+    timetableOperation.search(req.body,res);
 })
 
 module.exports=route;

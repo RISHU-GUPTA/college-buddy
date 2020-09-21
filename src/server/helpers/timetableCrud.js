@@ -5,12 +5,15 @@ const timeOperations={
         Time.create(object,(err,doc)=>{
             if(err){
                 console.log("Error during uploading time table ",err);
-                res.json({"status":"F","doc":doc});
+                res.json({"status":"F","error":err});
+            }
+            else{
+                res.json({"status":"T","doc":doc});
             }
         })
     },
     search(object,res){
-        Time.find({'branch':object.branch,'sem':object.sem,'time':object.time,'sec':object.sem},{subject:1,teacher:1,room:1},(err,doc)=>{
+        Time.find({branch:object.branch,sem:object.sem,time:object.time,sec:object.sec},{subject:1,teacher:1,room:1},(err,doc)=>{
             if(err){
                 console.log("Error in searching timetable ",err);
             }

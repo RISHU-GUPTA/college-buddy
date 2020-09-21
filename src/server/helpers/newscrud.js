@@ -11,5 +11,17 @@ const newsOperation={
                 res.json({"news":doc});
             }
         })
+    },
+    news(res){
+        News.find({},(err,doc)=>{
+            if(err){
+                console.log("Error while finding news ",err);
+                res.json({"error":err})
+            }
+            else{
+                res.send({"status":200,"news":doc});
+            }
+        })
     }
 }
+module.exports=newsOperation;
